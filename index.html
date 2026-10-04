@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#edece6" />
+    <meta name="description" content="Дарья Чемагина — senior-креатор. Личное портфолио." />
+    <title>Дарья Чемагина — senior-креатор</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="portfolio">
+      <header class="masthead">
+        <a class="monogram" href="./" aria-label="Дарья Чемагина — главная">дч<span aria-hidden="true">.</span></a>
+        <p class="masthead-label">Личное портфолио<span class="label-separator" aria-hidden="true"> / </span><span>2026</span></p>
+        <button class="theme-button" type="button" aria-label="Включить тёмный фон" aria-pressed="false">
+          <span class="theme-label">Сменить фон</span>
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <main class="hero" aria-labelledby="hero-title">
+        <div class="hero-composition">
+          <div class="composition-index" aria-hidden="true"><span>01</span><span class="index-rule"></span><span>Введение</span></div>
+
+          <h1 class="hero-title" id="hero-title">
+            <span class="first-name">Дарья</span>
+            <span class="last-name">Чемагина</span>
+          </h1>
+
+          <p class="role"><span class="role-dot" aria-hidden="true"></span>senior-креатор</p>
+
+          <figure class="portrait">
+            <div class="portrait-backing" aria-hidden="true"></div>
+            <button class="portrait-button" type="button" aria-label="Открыть фото Дарьи целиком">
+              <img src="assets/daria-chemagina.jpeg" width="640" height="640" alt="Чёрно-белый портрет Дарьи Чемагиной" fetchpriority="high" />
+              <span class="portrait-expand" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.5" /></svg>
+              </span>
+            </button>
+            <figcaption><span>Дарья / портрет</span><span>↗</span></figcaption>
+          </figure>
+
+        </div>
+      </main>
+
+      <footer class="page-footer">
+        <p class="footer-thought">Всё начинается<br />с хорошей идеи.</p>
+        <span class="footer-line" aria-hidden="true"></span>
+        <p class="footer-index"><span class="footer-square" aria-hidden="true"></span>Креатив. Концепции. Характер.</p>
+        <span class="copyright">© 2026</span>
+      </footer>
+    </div>
+
+    <dialog class="photo-dialog" aria-labelledby="photo-dialog-title">
+      <div class="photo-dialog-header">
+        <h2 id="photo-dialog-title">Дарья Чемагина</h2>
+        <button class="dialog-close" type="button" aria-label="Закрыть фото"><span aria-hidden="true">×</span></button>
+      </div>
+      <img src="assets/daria-chemagina.jpeg" width="640" height="640" alt="Полный чёрно-белый портрет Дарьи Чемагиной" />
+      <p class="photo-dialog-caption">senior-креатор</p>
+    </dialog>
+  </body>
+</html>
