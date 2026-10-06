@@ -576,3 +576,6 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
  .case-turvsibur { --symbol-x:42%; }
  .case-siburvkus { --symbol-x:0%; --copy-x:34%; }
 }
+
+/* Restore a natural gap after Г/г without loosening the rest of the surname. */
+.surname-g { letter-spacing:-.025em; }
