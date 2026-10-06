@@ -175,3 +175,327 @@ body:has(.photo-dialog[open]) { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Art direction: a warm gallery ground and one sculptural editorial scene. */
+:root { --paper: #e5d7d1; --ink: #29252d; --muted: #69606c; --line: #b9aab5; --accent: #c2b4e6; }
+:root[data-theme="dark"] { --paper: #29252f; --ink: #f2ebe4; --muted: #c0b4c5; --line: #5b4f61; --accent: #c2b4e6; }
+.monogram span { color: #88729b; }
+.masthead { min-height: 90px; }
+.masthead-label { letter-spacing: .1em; }
+.theme-button { gap: 12px; }
+.composition-index { top: 0; letter-spacing: .12em; }
+.hero { padding: 34px 0 30px; }
+.hero-composition { width: min(100%, calc((100svh - 250px) * 2.09)); isolation: isolate; }
+.first-name { top: 13%; left: -.01em; font-size: 20cqw; letter-spacing: -.065em; }
+.last-name { bottom: 2%; left: -.026em; font-size: 19.8cqw; letter-spacing: -.07em; }
+.role { left: 8%; top: 58%; padding: 12px 21px; border-radius: 3px; font-size: clamp(18px, 1.7cqw, 29px); transform: rotate(-4deg); box-shadow: 5px 6px 0 #29252d; }
+.role-dot { width: 6px; height: 6px; }
+.portrait { top: 11%; right: 7%; width: 23%; }
+.portrait-backing { background: var(--accent); top: 12px; left: 12px; transform: rotate(4deg); }
+.portrait-button { transform: rotate(-2deg); box-shadow: 0 13px 28px #33203a24; }
+.portrait-expand { background: #29252d; border-color: #f2ebe450; }
+figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding: 3px 5px; }
+.page-footer { min-height: 96px; }
+.footer-thought { font-size: 13px; }
+/* Reference composition: individually layered sculptures across the name. */
+.portfolio { overflow: clip; position: relative; }
+.hero { padding: 0; flex: 0 0 auto; }
+.hero-composition { width: 100%; height: auto; aspect-ratio: 1316.171875 / 714; }
+.hero-title > span { z-index: 2; }
+.first-name { top: 17.58%; }
+.hero-title .first-name { z-index: 6; }
+.last-name { bottom: 7.5%; }
+.role { top: 57.4%; left: 8%; z-index: 4; padding: .912cqw 1.595cqw; font-size: 1.7cqw; gap: .912cqw; }
+.role-dot { width: .456cqw; height: .456cqw; }
+.portrait-backing { top: .912cqw; left: .912cqw; }
+.portrait-expand { width: 2.43cqw; height: 2.43cqw; top: .912cqw; right: .912cqw; }
+.portrait-expand svg { width: 1.747cqw; height: 1.747cqw; }
+.portrait { top: 16%; right: 7%; width: 23%; z-index: 3; }
+.sculptures { position: absolute; inset: 0; pointer-events: none; user-select: none; }
+.sculpture { position: absolute; display: block; height: auto; object-fit: contain; filter: drop-shadow(10px 15px 12px #33203a24); }
+.sculpture-memoji { width: 21%; left: 12.3%; top: -7%; transform: rotate(-7deg); z-index: 7; }
+.sculpture-banknote { width: 24%; left: 51.35%; top: -.2%; transform: rotate(5deg); z-index: 7; }
+.sculpture-bible { width: 17.25%; left: 36.2%; top: 41.8%; transform: none; z-index: 5; }
+.sculpture-brain { width: 17.8%; left: -7.15%; top: 73.2%; transform: none; z-index: 1; }
+.sculpture-laptop { width: 20.2%; left: 57.6%; top: 82.4%; transform: none; z-index: 5; }
+.sculpture-piano { width: 22.6%; left: 86.24%; top: 57.8%; transform: none; z-index: 3; }
+[data-theme="dark"] .sculpture { filter: drop-shadow(10px 15px 14px #08030c55); }
+@media (min-width: 1600px) {
+  .masthead { min-height: 110px; }
+  .page-footer { min-height: 110px; }
+
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .masthead { min-height: 80px; }
+  .page-footer { min-height: 80px; }
+
+}
+/* Mobile coordinates follow the approved 372px composition, independently of height. */
+@media (max-width: 700px) {
+  .masthead { min-height: 76px; }
+  .masthead-label { letter-spacing: 0; }
+  .hero { padding: 0 var(--space); margin-inline: calc(-1 * var(--space)); overflow: clip; }
+  .page-footer { min-height: 84px; }
+  .hero-composition { display: block; width: 100%; height: auto; min-height: 0; aspect-ratio: 336 / 597; }
+  .hero-title { display: block; }
+  .hero-title > span { position: absolute; inset: auto; margin: 0; }
+  .hero-title .first-name { top: 33.33%; left: -.01em !important; font-size: 23.8cqw; line-height: .85; }
+  .hero-title .last-name { top: 46.06%; bottom: auto; left: -.026em !important; font-size: 23cqw; line-height: .85; }
+  .role { position: absolute; left: 1%; top: 59.3%; width: max-content; max-width: 98%; margin: 0; padding: 2.38cqw 2.68cqw; font-size: 3.05cqw; gap: 2.08cqw; transform: rotate(-4deg); box-shadow: 3px 4px 0 #29252d; }
+  .role-dot { width: 1.49cqw; height: 1.49cqw; }
+  .portrait { position: absolute; top: 1.05%; right: 2.15%; width: 52%; margin: 0; }
+  .portrait-backing { top: 2.08cqw; left: 2.08cqw; transform: rotate(4deg); }
+  .portrait-expand { width: 7.14cqw; height: 7.14cqw; top: 2.08cqw; right: 2.08cqw; }
+  .portrait-expand svg { width: 5.95cqw; height: 5.95cqw; }
+  .sculpture { filter: drop-shadow(5px 8px 7px #33203a28); }
+  .sculpture-brain { width: 33%; left: calc(-1 * var(--space) - 3%); top: -.7%; transform: rotate(20deg); }
+  .sculpture-banknote { width: 37%; left: 21.2%; top: 16.1%; transform: rotate(5deg); }
+  .sculpture-bible { width: 31.5%; left: 17%; top: 61.5%; transform: none; }
+  .sculpture-piano { width: 40%; left: 77.7%; right: auto; top: 54.1%; transform: none; }
+  .sculpture-memoji { width: 45%; left: 45.5%; top: 73.2%; transform: rotate(7deg); }
+  .sculpture-laptop { width: 36.6%; left: calc(-1 * var(--space) - 3.57%); top: 80.74%; transform: none; }
+}
+
+/* Interaction layers share the original PNG viewBox and all existing layout rules. */
+.sculpture.interactive-sculpture { overflow: visible; }
+.sculpture.interactive-sculpture:focus { outline: none; }
+.sculpture.interactive-sculpture:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+.sculpture .sculpture-hit-area { pointer-events: fill; touch-action: pan-y; }
+.editorial-cursor { position: fixed; inset: 0; pointer-events: none; z-index: 2147483647; opacity: 0; }
+.editorial-cursor.is-visible { opacity: 1; }
+.editorial-cursor-dot, .editorial-cursor-ring { position: absolute; left: 0; top: 0; border-radius: 50%; will-change: transform; }
+.editorial-cursor-dot { display: none; }
+.editorial-cursor-ring { width: 14px; height: 14px; margin: -7px; background: #9555dc; box-shadow: 0 0 10px #9555dc80, 0 0 22px #9555dc40; transition: width .2s ease, height .2s ease, margin .2s ease; }
+.editorial-cursor.is-interactive .editorial-cursor-ring { width: 20px; height: 20px; margin: -10px; }
+.editorial-cursor.is-pressed .editorial-cursor-ring { width: 12px; height: 12px; margin: -6px; }
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+  html.has-editorial-cursor, html.has-editorial-cursor * { cursor: none !important; }
+}
+@media (max-width: 700px), (hover: none), (pointer: coarse) { .editorial-cursor { display: none; } }
+
+/* Collectible case wall: independent desktop, tablet and mobile partitions.
+   Widths are derived from native cover ratios; every band is a complete rectangle. */
+.case-gallery { position: relative; width: 100%; margin: 0; padding: 0; isolation: isolate; }
+.case-cover { position: absolute; display: block; overflow: clip; container-type: inline-size; color: #fff; text-decoration: none; -webkit-user-select: none; user-select: none; }
+.case-photo { display: block; width: 100%; height: auto; filter: grayscale(1) contrast(.78) brightness(.88); transition: filter .5s ease; }
+.case-cover::after { content: ''; position: absolute; inset: 0; z-index: 1; background: #19162352; pointer-events: none; transition: background .5s ease; }
+.case-copy { position: absolute; z-index: 3; left: var(--copy-x, 0%); right: var(--copy-right, 0%); top: var(--copy-top, auto); bottom: var(--copy-bottom, 0%); display: flex; flex-direction: column; padding: 5cqw; opacity: 0; transform: translateY(12px); filter: blur(4px); transition: opacity .35s ease, transform .6s cubic-bezier(.16,1,.3,1), filter .45s ease; pointer-events: none; text-shadow: 0 2px 12px #17111c55; }
+.case-brand { font-size: min(var(--brand-size, 10cqw), 76px); font-weight: 700; line-height: .92; letter-spacing: -.06em; text-wrap: balance; }
+.case-kind { margin-top: .7em; color: var(--accent); font-size: min(4.6cqw, 28px); font-weight: 700; line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
+.case-cover .case-symbol { position: absolute; z-index: 2; width: var(--symbol-size); height: var(--symbol-height); object-fit: contain; left: var(--symbol-x); top: var(--symbol-y); filter: drop-shadow(0 8px 10px #110d204d); opacity: 0; transform: translateY(20px) rotate(calc(var(--symbol-angle) - 7deg)) scale(.92); transform-origin: 50% 60%; transition: opacity .35s ease, transform .75s cubic-bezier(.16,1,.3,1), filter .5s ease; pointer-events: none; }
+.case-vkmail { --symbol-size: 45%; --symbol-height: 72%; --symbol-x: 51%; --symbol-y: 0%; --symbol-angle: 7deg; --copy-right: 14%; }
+.case-split { --symbol-size: 55%; --symbol-height: 64%; --symbol-x: 1%; --symbol-y: 2%; --symbol-angle: -9deg; }
+.case-happynewfuture { --symbol-size: 47%; --symbol-height: 70%; --symbol-x: 0%; --symbol-y: 0%; --symbol-angle: -15deg; --copy-x: 32%; }
+.case-roche { --symbol-size: 45%; --symbol-height: 96%; --symbol-x: -1%; --symbol-y: 0%; --symbol-angle: -20deg; --copy-x: 33%; }
+.case-altai { --symbol-size: 45%; --symbol-height: 64%; --symbol-x: 55%; --symbol-y: 32%; --symbol-angle: 7deg; --copy-right: 30%; --copy-top: 0%; --copy-bottom: auto; --brand-size: 8cqw; }
+.case-beeline { --symbol-size: 45%; --symbol-height: 87%; --symbol-x: 53%; --symbol-y: 3%; --symbol-angle: 12deg; --copy-right: 22%; }
+.case-siburvkus { --symbol-size: 59%; --symbol-height: 70%; --symbol-x: 32%; --symbol-y: 2%; --symbol-angle: -13deg; --copy-right: 17%; }
+.case-turvsibur { --symbol-size: 69%; --symbol-height: 54%; --symbol-x: 28%; --symbol-y: 0%; --symbol-angle: -14deg; --copy-right: 9%; }
+.case-ultimamarket { --symbol-size: 81%; --symbol-height: 67%; --symbol-x: 13%; --symbol-y: 5%; --symbol-angle: 9deg; }
+.case-cian { --symbol-size: 78%; --symbol-height: 50%; --symbol-x: 1%; --symbol-y: 5%; --symbol-angle: -6deg; --copy-bottom: 5%; }
+/* Fine-pointer reveal: photos stay monochrome, objects and type enter once per hover. */
+.case-brand, .case-kind { transform: translateY(10px); transition: transform .65s cubic-bezier(.16,1,.3,1); }
+.case-kind { transition-delay: 45ms; }
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+  .case-cover:hover .case-photo { filter: grayscale(1) contrast(.82) brightness(.94); }
+  .case-cover:hover::after { background: #19162342; }
+  .case-cover:hover .case-copy { opacity: 1; transform: none; filter: none; }
+  .case-cover:hover .case-brand, .case-cover:hover .case-kind { transform: none; }
+  .case-cover:hover .case-symbol { opacity: 1; transform: translateY(-3px) rotate(var(--symbol-angle)) scale(1.025); }
+}
+.case-cover:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.case-cover:focus-visible .case-copy { opacity: 1; transform: none; filter: none; }
+.case-cover:focus-visible .case-symbol { opacity: 1; transform: rotate(var(--symbol-angle)); }
+.case-cover:focus-visible .case-brand, .case-cover:focus-visible .case-kind { transform: none; }
+@media (hover: none), (pointer: coarse) {
+  .case-copy { opacity: 1; transform: none; filter: none; }
+  .case-cover .case-symbol { opacity: 1; transform: rotate(var(--symbol-angle)); }
+  .case-brand, .case-kind { transform: none; }
+}
+.case-gallery { aspect-ratio: 1 / 0.6367808357; }
+.case-vkmail { left: 0.00000000%; top: 0.00000000%; width: 32.09397894%; }
+.case-split { left: 32.09397894%; top: 0.00000000%; width: 29.16084165%; }
+.case-happynewfuture { left: 61.25482059%; top: 0.00000000%; width: 38.74517941%; }
+.case-roche { left: 0.00000000%; top: 37.80026480%; width: 26.16844592%; }
+.case-siburvkus { left: 0.00000000%; top: 57.65559104%; width: 26.16844592%; }
+.case-altai { left: 26.16844592%; top: 37.80026480%; width: 29.40115211%; }
+.case-turvsibur { left: 26.16844592%; top: 63.30454429%; width: 29.40115211%; }
+.case-beeline { left: 55.56959803%; top: 37.80026480%; width: 19.46234613%; }
+.case-ultimamarket { left: 55.56959803%; top: 54.97809746%; width: 19.46234613%; }
+.case-cian { left: 75.03194417%; top: 37.80026480%; width: 24.96805583%; }
+@media (min-width: 701px) and (max-width: 1100px) {
+.case-gallery { aspect-ratio: 1 / 1.7466084536; }
+.case-vkmail { left: 0.00000000%; top: 0.00000000%; width: 32.09397894%; }
+.case-split { left: 32.09397894%; top: 0.00000000%; width: 29.16084165%; }
+.case-happynewfuture { left: 61.25482059%; top: 0.00000000%; width: 38.74517941%; }
+.case-roche { left: 0.00000000%; top: 13.78127087%; width: 60.28184409%; }
+.case-beeline { left: 0.00000000%; top: 30.45681645%; width: 60.28184409%; }
+.case-cian { left: 60.28184409%; top: 13.78127087%; width: 39.71815591%; }
+.case-altai { left: 0.00000000%; top: 49.85469035%; width: 65.01472110%; }
+.case-turvsibur { left: 0.00000000%; top: 70.41619255%; width: 65.01472110%; }
+.case-siburvkus { left: 65.01472110%; top: 49.85469035%; width: 34.98527890%; }
+.case-ultimamarket { left: 65.01472110%; top: 70.49413041%; width: 34.98527890%; }
+.case-happynewfuture { --copy-x: 0%; --symbol-x: 55%; --symbol-size: 45%; --symbol-height: 56%; --copy-right: 15%; }
+.case-cian { --symbol-size: 66%; --symbol-height: 55%; --symbol-x: 29%; --symbol-y: 2%; }
+.case-roche { --symbol-size: 40%; --symbol-height: 96%; --symbol-x: 58%; --copy-x: 0%; --copy-right: 23%; }
+.case-beeline { --symbol-size: 49%; --symbol-height: 88%; --symbol-x: 49%; --copy-right: 25%; }
+}
+@media (max-width: 700px) {
+.case-copy { opacity: 1; padding: 5cqw; transform: none; filter: none; }
+.case-brand, .case-kind { transform: none; }
+.case-brand { font-size: max(17px, var(--brand-size, 10cqw)); }
+.case-kind { font-size: max(10px, 4.8cqw); }
+.case-cover .case-symbol { opacity: 1; filter: drop-shadow(0 5px 6px #110d2040); transform: rotate(var(--symbol-angle)); }
+.case-vkmail { --symbol-size: 51%; --symbol-height: 61%; --symbol-x: 45%; --symbol-y: 0%; --symbol-angle: 6deg; --copy-right: 0%; }
+.case-split { --symbol-size: 60%; --symbol-height: 62%; --symbol-x: 1%; --symbol-y: 0%; --symbol-angle: -10deg; }
+.case-happynewfuture { --symbol-size: 58%; --symbol-height: 81%; --symbol-x: 42%; --symbol-y: -2%; --symbol-angle: 13deg; --copy-x: 0%; --copy-right: 25%; }
+.case-roche { --symbol-size: 45%; --symbol-height: 97%; --symbol-x: 57%; --symbol-y: -2%; --symbol-angle: 15deg; --copy-x: 0%; --copy-right: 24%; }
+.case-altai { --symbol-size: 47%; --symbol-height: 62%; --symbol-x: 54%; --symbol-y: 36%; --symbol-angle: -5deg; --copy-right: 32%; --brand-size: 8cqw; }
+.case-beeline { --symbol-size: 48%; --symbol-height: 89%; --symbol-x: 53%; --symbol-y: 1%; --symbol-angle: 11deg; --copy-right: 22%; }
+.case-siburvkus { --symbol-size: 64%; --symbol-height: 65%; --symbol-x: 32%; --symbol-y: 0%; --symbol-angle: -12deg; --copy-right: 0%; }
+.case-turvsibur { --symbol-size: 65%; --symbol-height: 58%; --symbol-x: 34%; --symbol-y: 0%; --symbol-angle: -12deg; --copy-right: 22%; }
+.case-ultimamarket { --symbol-size: 81%; --symbol-height: 62%; --symbol-x: 12%; --symbol-y: 6%; --symbol-angle: 8deg; }
+.case-cian { --symbol-size: 86%; --symbol-height: 58%; --symbol-x: 4%; --symbol-y: 0%; --symbol-angle: -5deg; --copy-bottom: 0%; }
+.case-gallery { aspect-ratio: 1 / 3.5977116323; }
+.case-vkmail { left: 0.00000000%; top: 0.00000000%; width: 52.39420935%; }
+.case-split { left: 52.39420935%; top: 0.00000000%; width: 47.60579065%; }
+.case-happynewfuture { left: 0.00000000%; top: 10.92240319%; width: 100.00000000%; }
+.case-roche { left: 0.00000000%; top: 28.19035390%; width: 60.28184409%; }
+.case-beeline { left: 0.00000000%; top: 36.28595795%; width: 60.28184409%; }
+.case-cian { left: 60.28184409%; top: 28.19035390%; width: 39.71815591%; }
+.case-altai { left: 0.00000000%; top: 45.70319146%; width: 100.00000000%; }
+.case-siburvkus { left: 0.00000000%; top: 61.05686648%; width: 58.84073664%; }
+.case-ultimamarket { left: 58.84073664%; top: 61.05686648%; width: 41.15926336%; }
+.case-turvsibur { left: 0.00000000%; top: 77.90919354%; width: 100.00000000%; }
+}
+@media (prefers-reduced-motion: reduce) { .case-photo, .case-copy, .case-brand, .case-kind, .case-cover::after, .case-cover .case-symbol { transition: none; } }
+/* Keep the performers in the Altai cover clear of its brand caption. */
+.case-altai { --brand-size: 6.8cqw; }
+.case-altai .case-copy { padding: 4cqw; }
+.case-altai .case-altai .case-kind { font-size: 4.1cqw; }
+@media (max-width: 700px) {
+  .case-altai { --brand-size: 7cqw; }
+  .case-altai   .case-altai .case-kind { font-size: max(10px, 4.1cqw); }
+}
+
+/* Brand-logo poster compositions. SVG coordinates frame the visible logo rather than its export canvas.
+   Overflow stays visible; original PNG artwork and alpha are untouched. */
+.case-cover .case-logo { --symbol-angle: 0deg; overflow: visible; }
+.case-cover .case-copy { padding: 0; }
+.case-cover .case-kind { font-size: min(var(--kind-size, 4.6cqw),28px); }
+.case-vkmail { --symbol-x: 7%; --symbol-y: 8%; --symbol-size: 32%; --symbol-height: 40%; --copy-x: 44%; --copy-right: 6%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 8.5cqw; }
+.case-split { --symbol-x: 62%; --symbol-y: 7%; --symbol-size: 31%; --symbol-height: 41%; --copy-x: 7%; --copy-right: 44%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 9cqw; }
+.case-happynewfuture { --symbol-x: 59%; --symbol-y: 14%; --symbol-size: 37%; --symbol-height: 29%; --copy-x: 17%; --copy-right: 40%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 7.5cqw; }
+.case-roche { --symbol-x: 52%; --symbol-y: 13%; --symbol-size: 43%; --symbol-height: 40%; --copy-x: 5%; --copy-right: 58%; --copy-top: auto; --copy-bottom: 8%; --brand-size: 8.5cqw; --kind-size: 4.2cqw; }
+.case-altai { --symbol-x: 65%; --symbol-y: 31%; --symbol-size: 28%; --symbol-height: 46%; --copy-x: 6%; --copy-right: 57%; --copy-top: 8%; --copy-bottom: auto; --brand-size: 7cqw; --kind-size: 4.2cqw; }
+.case-beeline { --symbol-x: 6%; --symbol-y: 11%; --symbol-size: 32%; --symbol-height: 52%; --copy-x: 53%; --copy-right: 3%; --copy-top: auto; --copy-bottom: 10%; --brand-size: 9cqw; --kind-size: 4.4cqw; }
+.case-siburvkus { --symbol-x: 7%; --symbol-y: 9%; --symbol-size: 70%; --symbol-height: 23%; --copy-x: 26%; --copy-right: 6%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 10cqw; }
+.case-turvsibur { --symbol-x: 49%; --symbol-y: 65%; --symbol-size: 47%; --symbol-height: 26%; --copy-x: 6%; --copy-right: 39%; --copy-top: 5%; --copy-bottom: auto; --brand-size: 10cqw; }
+.case-ultimamarket { --symbol-x: 57%; --symbol-y: 5%; --symbol-size: 39%; --symbol-height: 45%; --copy-x: 5%; --copy-right: 46%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 8.5cqw; --kind-size: 4.4cqw; }
+.case-cian { --symbol-x: 8%; --symbol-y: 9%; --symbol-size: 32%; --symbol-height: 32%; --copy-x: 29%; --copy-right: 6%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 10cqw; --kind-size: 4.4cqw; }
+@media(min-width:701px) and (max-width:1100px) {
+ .case-roche { --symbol-x: 44%; --symbol-y: 9%; --symbol-size: 48%; --symbol-height: 35%; }
+ .case-beeline { --symbol-size: 28%; --symbol-x: 9%; --copy-x: 42%; }
+ .case-cian { --symbol-size: 31%; --symbol-height: 29%; }
+}
+@media(max-width:700px) {
+ .case-cover .case-brand { font-size: max(17px,var(--brand-size,9cqw)); }
+ .case-cover .case-kind { font-size: max(10px,var(--kind-size,4.8cqw)); }
+ .case-vkmail { --symbol-x: 8%; --symbol-y: 7%; --symbol-size: 34%; --symbol-height: 38%; --copy-x: 18%; --copy-right: 6%; --copy-bottom: 8%; --brand-size: 9cqw; --kind-size: 4.8cqw; }
+ .case-split { --symbol-x: 56%; --symbol-y: 7%; --symbol-size: 36%; --symbol-height: 37%; --copy-x: 7%; --copy-right: 10%; --copy-bottom: 8%; --brand-size: 9.5cqw; --kind-size: 5cqw; }
+ .case-happynewfuture { --symbol-x: 59%; --symbol-y: 10%; --symbol-size: 33%; --symbol-height: 37%; --copy-x: 7%; --copy-right: 28%; --copy-bottom: 10%; --brand-size: 9cqw; }
+ .case-roche { --symbol-x: 43%; --symbol-y: 9%; --symbol-size: 49%; --symbol-height: 36%; --copy-x: 7%; --copy-right: 12%; --copy-bottom: 8%; --brand-size: 9cqw; --kind-size: 4.5cqw; }
+ .case-altai { --symbol-x: 68%; --symbol-y: 13%; --symbol-size: 24%; --symbol-height: 39%; --copy-x: 7%; --copy-right: 36%; --copy-top: 11%; --brand-size: 7cqw; --kind-size: 4.2cqw; }
+ .case-beeline { --symbol-x: 8%; --symbol-y: 9%; --symbol-size: 25%; --symbol-height: 36%; --copy-x: 39%; --copy-right: 6%; --copy-bottom: 9%; --brand-size: 8.5cqw; --kind-size: 4.5cqw; }
+ .case-siburvkus { --symbol-x: 8%; --symbol-y: 11%; --symbol-size: 67%; --symbol-height: 26%; --copy-x: 8%; --copy-right: 12%; --copy-bottom: 9%; --brand-size: 10cqw; }
+ .case-turvsibur { --symbol-x: 34%; --symbol-y: 57%; --symbol-size: 58%; --symbol-height: 27%; --copy-x: 7%; --copy-right: 25%; --copy-top: 10%; --brand-size: 10cqw; }
+ .case-ultimamarket { --symbol-x: 52%; --symbol-y: 10%; --symbol-size: 38%; --symbol-height: 28%; --copy-x: 8%; --copy-right: 9%; --copy-bottom: 8%; --brand-size: 8.5cqw; --kind-size: 5cqw; }
+ .case-cian { --symbol-x: 9%; --symbol-y: 8%; --symbol-size: 37%; --symbol-height: 27%; --copy-x: 24%; --copy-right: 8%; --copy-bottom: 9%; --brand-size: 12cqw; --kind-size: 6cqw; }
+}
+
+/* Reference board: 1440 × 900. Each desktop partition and logo is anchored
+   to the board, including the optical centre and the artwork's native tilt. */
+@media (min-width: 701px) {
+  .case-gallery { height: 100svh; aspect-ratio: auto; }
+  .case-cover { container-type: size; }
+  .case-photo { height: 100%; object-fit: cover; }
+  .case-vkmail { left: 0.00000000%; top: 0.00000000%; width: 29.86111111%; height: 39.22222222%; --symbol-x: 22.79069767%; --symbol-y: 27.47875354%; --symbol-size: 30.23255814%; --symbol-height: 36.82719547%; --logo-angle: -12deg; --copy-x: 44.41860465%; --copy-right: 5.58139535%; --copy-top: 57.22379603%; --copy-bottom: auto; }
+  .case-split { left: 29.86111111%; top: 0.00000000%; width: 30.69444444%; height: 39.22222222%; --symbol-x: 77.82805430%; --symbol-y: 26.91218130%; --symbol-size: 30.76923077%; --symbol-height: 40.79320113%; --logo-angle: 0deg; --copy-x: 6.78733032%; --copy-right: 44.57013575%; --copy-top: 57.22379603%; --copy-bottom: auto; }
+  .case-happynewfuture { left: 60.55555556%; top: 0.00000000%; width: 39.44444444%; height: 39.22222222%; --symbol-x: 77.11267606%; --symbol-y: 28.61189802%; --symbol-size: 36.61971831%; --symbol-height: 29.74504249%; --logo-angle: 0deg; --copy-x: 16.90140845%; --copy-right: 40.31690141%; --copy-top: 52.40793201%; --copy-bottom: auto; }
+  .case-roche { left: 0.00000000%; top: 39.22222222%; width: 21.80555556%; height: 21.88888889%; --symbol-x: 73.88535032%; --symbol-y: 32.99492386%; --symbol-size: 43.31210191%; --symbol-height: 40.60913706%; --logo-angle: 0deg; --copy-x: 4.77707006%; --copy-right: 57.96178344%; --copy-top: 56.85279188%; --copy-bottom: auto; }
+  .case-siburvkus { left: 0.00000000%; top: 61.11111111%; width: 21.80555556%; height: 38.88888889%; --symbol-x: 42.35668790%; --symbol-y: 19.71428571%; --symbol-size: 70.06369427%; --symbol-height: 22.57142857%; --logo-angle: 0deg; --copy-x: 25.79617834%; --copy-right: 6.05095541%; --copy-top: 60.85714286%; --copy-bottom: auto; }
+  .case-altai { left: 21.80555556%; top: 39.22222222%; width: 28.81944444%; height: 29.00000000%; --symbol-x: 79.03614458%; --symbol-y: 54.78927203%; --symbol-size: 27.95180723%; --symbol-height: 46.74329502%; --logo-angle: 0deg; --copy-x: 6.02409639%; --copy-right: 56.62650602%; --copy-top: 8.42911877%; --copy-bottom: auto; }
+  .case-turvsibur { left: 21.80555556%; top: 68.22222222%; width: 28.81944444%; height: 31.77777778%; --symbol-x: 72.53012048%; --symbol-y: 78.32167832%; --symbol-size: 45.78313253%; --symbol-height: 32.16783217%; --logo-angle: -7deg; --copy-x: 6.02409639%; --copy-right: 38.79518072%; --copy-top: 0.00000000%; --copy-bottom: auto; }
+  .case-beeline { left: 50.62500000%; top: 39.22222222%; width: 25.55555556%; height: 24.11111111%; --symbol-x: 21.46739130%; --symbol-y: 36.40552995%; --symbol-size: 31.52173913%; --symbol-height: 51.61290323%; --logo-angle: 0deg; --copy-x: 52.98913043%; --copy-right: 3.26086957%; --copy-top: 41.93548387%; --copy-bottom: auto; }
+  .case-ultimamarket { left: 50.62500000%; top: 63.33333333%; width: 25.55555556%; height: 36.66666667%; --symbol-x: 76.08695652%; --symbol-y: 27.27272727%; --symbol-size: 38.58695652%; --symbol-height: 44.54545455%; --logo-angle: 0deg; --copy-x: 5.16304348%; --copy-right: 45.38043478%; --copy-top: 60.60606061%; --copy-bottom: auto; }
+  .case-cian { left: 76.18055556%; top: 39.22222222%; width: 23.81944444%; height: 60.77777778%; --symbol-x: 20.69970845%; --symbol-y: 21.38939671%; --symbol-size: 31.77842566%; --symbol-height: 26.87385740%; --logo-angle: 0deg; --copy-x: 28.86297376%; --copy-right: 6.41399417%; --copy-top: 69.28702011%; --copy-bottom: auto; }
+  .case-cover .case-logo { transform-origin: 50% 50%; transform: translate(-50%,calc(-50% + 20px)) rotate(calc(var(--logo-angle) - 7deg)) scale(.92); }
+  .case-cover:focus-visible .case-logo { transform: translate(-50%,-50%) rotate(var(--logo-angle)); }
+}
+@media (min-width:701px) and (hover:hover) and (pointer:fine) {
+  .case-cover:hover .case-logo { transform: translate(-50%,-50%) rotate(var(--logo-angle)); }
+}
+@media (min-width:701px) and (hover:none), (min-width:701px) and (pointer:coarse) {
+  .case-cover .case-logo { transform: translate(-50%,-50%) rotate(var(--logo-angle)); }
+}
+/* Keep the mobile partition rhythm while reducing its total height by 26%. */
+@media (max-width:700px) {
+  .case-gallery { aspect-ratio: 1 / 2.65; }
+  .case-photo { height: 100%; object-fit: cover; }
+  .case-vkmail { height: 10.92240319%; }
+  .case-split { height: 10.92240319%; }
+  .case-happynewfuture { height: 17.26795071%; }
+  .case-roche { height: 8.09560405%; }
+  .case-beeline { height: 9.41723351%; }
+  .case-cian { height: 17.51283756%; }
+  .case-altai { height: 15.35367502%; }
+  .case-siburvkus { height: 16.85232706%; }
+  .case-ultimamarket { height: 16.85232706%; }
+  .case-turvsibur { height: 22.09080646%; }
+  .case-happynewfuture { --brand-size: 7cqw; --kind-size: 4.2cqw; }
+  .case-vkmail .case-logo { --symbol-angle: -12deg; }
+  .case-turvsibur .case-logo { --symbol-angle: -12deg; }
+}
+
+/* Type follows both dimensions of the fitted desktop board. */
+@media (min-width:701px) {
+  .case-cover .case-brand { font-size: min(var(--brand-size),var(--brand-height),76px); }
+  .case-cover .case-kind { font-size: min(var(--kind-size,4.6cqw),var(--kind-height),28px); }
+  .case-vkmail { --brand-height: 10.354108cqh; --kind-height: 5.603399cqh; }
+  .case-split { --brand-height: 11.269122cqh; --kind-height: 5.759773cqh; }
+  .case-happynewfuture { --brand-height: 12.067989cqh; --kind-height: 7.401700cqh; }
+  .case-roche { --brand-height: 13.548223cqh; --kind-height: 6.694416cqh; }
+  .case-siburvkus { --brand-height: 8.971429cqh; --kind-height: 4.126857cqh; }
+  .case-altai { --brand-height: 11.130268cqh; --kind-height: 6.678161cqh; }
+  .case-turvsibur { --brand-height: 14.510490cqh; --kind-height: 6.674825cqh; }
+  .case-beeline { --brand-height: 15.262673cqh; --kind-height: 7.461751cqh; }
+  .case-ultimamarket { --brand-height: 9.478788cqh; --kind-height: 4.906667cqh; }
+  .case-cian { --brand-height: 6.270567cqh; --kind-height: 2.759049cqh; }
+}
+
+@media(max-width:700px) {
+ .case-roche { --symbol-y: 3%; --symbol-height: 32%; }
+ .case-turvsibur .case-logo { --symbol-angle: -7deg; }
+}
+@media(max-width:700px) {
+ .case-happynewfuture { --symbol-height: 30%; }
+}
+
+/* Four captions occupy the exact text zones marked on the reference board. */
+@media (min-width:701px) {
+  .case-siburvkus { --copy-x: 25.79617834%; --copy-right: 6.05095541%; --copy-top: 60.85714286%; --brand-size: 18.471338cqw; --brand-height: 16.571429cqh; --kind-size: 6.687898cqw; --kind-height: 6cqh; --copy-region-height: 32.571429%; }
+  .case-turvsibur { --copy-x: 6.02409639%; --copy-right: 38.79518072%; --copy-top: 0%; --brand-size: 16.385542cqw; --brand-height: 23.776224cqh; --kind-size: 6.746988cqw; --kind-height: 9.790210cqh; --copy-region-height: 42.657343%; }
+  .case-beeline { --copy-x: 52.98913043%; --copy-right: 3.26086957%; --copy-top: 41.93548387%; --brand-size: 11.413043cqw; --brand-height: 19.354839cqh; --kind-size: 6.521739cqw; --kind-height: 11.059908cqh; --copy-region-height: 43.778802%; }
+  .case-cian { --copy-x: 28.86297376%; --copy-right: 6.41399417%; --copy-top: 69.28702011%; --brand-size: 22.157434cqw; --brand-height: 13.893967cqh; --kind-size: 8.163265cqw; --kind-height: 5.118830cqh; --copy-region-height: 23.948812%; --symbol-x: 29.737609%; --symbol-y: 26.142596%; --symbol-size: 50.728863%; --symbol-height: 42.961609%; }
+  .case-siburvkus .case-copy, .case-turvsibur .case-copy,
+  .case-beeline .case-copy, .case-cian .case-copy { min-height: var(--copy-region-height); justify-content: center; }
+}
+@media(max-width:700px) {
+  .case-siburvkus { --copy-x: 26%; --copy-right: 6%; --copy-bottom: 7%; --brand-size: 16cqw; --kind-size: 5.8cqw; }
+  .case-turvsibur { --brand-size: 14cqw; --kind-size: 6cqw; }
+  .case-beeline { --brand-size: 10cqw; --kind-size: 4.8cqw; }
+  .case-cian { --brand-size: 18cqw; --kind-size: 8cqw; --symbol-size: 58%; --symbol-height: 44%; }
+}
+@media(min-width:701px) {
+ .case-beeline { --brand-size: 10.869565cqw; --brand-height: 18.433180cqh; --kind-size: 5.978261cqw; --kind-height: 10.138249cqh; }
+}

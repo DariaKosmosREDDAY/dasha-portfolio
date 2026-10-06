@@ -1,0 +1,91 @@
+/* This case inherits the homepage palette, type, masthead, footer and cursor. */
+.case-shell { max-width: 1600px; margin: auto; padding-inline: var(--space); }
+.case-shell main { padding-bottom: 0; }
+.case-intro { padding-block: 30px 56px; }
+.case-topline { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.case-back { color: inherit; text-decoration: none; font-size: 16px; }
+.case-back:hover { color: var(--accent); }
+.case-category { color: var(--accent); font-size: 16px; margin: 0; }
+.case-intro h1 { margin: 50px 0 0; font-weight: 700; letter-spacing: -.065em; }
+.case-client { display: block; font-size: clamp(28px, 4.4vw, 64px); line-height: 1; margin-bottom: 18px; color: var(--accent); }
+.case-headline { display: block; font-size: clamp(54px, 8.6vw, 132px); line-height: .9; }
+.case-mark { display: block; width: 220px; height: 24px; margin: 22px 0 22px 42%; color: var(--accent); }
+.case-lead { max-width: 790px; margin: 0 0 38px auto; font-size: clamp(20px, 2vw, 28px); line-height: 1.35; letter-spacing: -.025em; }
+.case-meta { display: grid; grid-template-columns: 1fr 1.5fr 1.3fr; gap: 36px; margin: 0; padding-top: 22px; border-top: 1px solid var(--line); }
+.case-meta dt { font-family: Consolas, 'Liberation Mono', monospace; color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+.case-meta dd { margin: 0; font-size: 17px; line-height: 1.35; max-width: 350px; }
+:is(.split-case, .cian-case) figure { margin: 0; }
+:is(.split-case, .cian-case) main img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.opening-photos { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: end; }
+.opening-side { display: flex; flex-direction: column; align-items: flex-start; gap: 30px; }
+.case-sticker { display: inline-block; color: #29252d; background: var(--accent); padding: 12px 16px; border: 1px solid #29252d; box-shadow: 4px 5px 0 var(--ink); transform: rotate(-4deg); font-size: clamp(12px, 1.3vw, 18px); letter-spacing: -.035em; font-weight: 700; }
+.case-logic { margin-top: 80px; }
+.case-logic article { display: grid; grid-template-columns: 1fr 1.8fr; gap: 40px; border-top: 1px solid var(--line); padding-block: 28px; }
+.case-logic h2 { margin: 0; font-size: clamp(28px, 3.4vw, 50px); line-height: 1; letter-spacing: -.055em; }
+.case-logic p { margin: 0; font-size: clamp(19px, 1.8vw, 25px); line-height: 1.4; max-width: 790px; letter-spacing: -.02em; }
+.case-story { margin-top: 65px; }
+.story-start { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; }
+.story-step { border-top: 1px solid var(--line); padding-top: 18px; }
+.step-number { display: block; font-size: clamp(72px, 7vw, 104px); letter-spacing: -.075em; line-height: 1; color: var(--accent); }
+.story-step p { font-size: clamp(19px,1.7vw,24px); line-height: 1.4; letter-spacing: -.02em; margin: 20px 0 0; }
+.mechanics-photos { display: grid; grid-template-columns: 1.05fr 1fr; align-items: start; gap: 28px; margin-top: 38px; }
+.mechanics-details { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+.mechanics-details figure:last-child { margin-top: 65px; }
+.story-zoo, .story-finale { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; margin-top: 65px; }
+.story-zoo p, .story-finale p { max-width: 790px; }
+.zoo-photos { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; margin-top: 35px; }
+.zoo-photos figure:first-child { width: 85%; }
+.final-photo { width: 85%; margin: 42px 0 0 auto !important; }
+.case-cta { margin-top: 80px; padding-block: 38px 50px; border-top: 1px solid var(--line); }
+.case-cta h2 { font-size: clamp(35px, 5.5vw, 85px); line-height: .98; letter-spacing: -.06em; margin: 0; }
+.case-cta p { margin: 26px 0 0 auto; width: fit-content; color: var(--accent); font-size: clamp(17px, 1.7vw, 24px); font-weight: 700; line-height: 1.15; letter-spacing: -.03em; }
+.case-shell .page-footer { padding-block: 24px; gap: 16px; }
+@media(max-width: 900px) {
+  .case-shell { padding-inline: 30px; }
+  .case-meta { gap: 24px; }
+  .case-logic article { grid-template-columns: 1fr 2fr; gap: 24px; }
+  .story-start { gap: 24px; }
+  .mechanics-details { grid-template-columns: 1fr; }
+  .mechanics-details figure:last-child { width: 65%; margin: 0 0 0 auto; }
+}
+@media(max-width: 700px) {
+  .case-shell { padding-inline: 20px; }
+  .case-shell .masthead { min-height: 76px; gap: 12px; }
+  .case-shell .masthead-label { padding-left: 0; font-size: 6px; }
+  .case-intro { padding-block: 24px 35px; }
+  .case-topline { gap: 12px; }
+  .case-back, .case-category { font-size: 13px; }
+  .case-intro h1 { margin-top: 35px; }
+  .case-client { font-size: clamp(23px, 6.5vw, 42px); margin-bottom: 15px; }
+  .case-headline { font-size: clamp(34px, 10.2vw, 71px); line-height: .96; }
+  .case-mark { width: 130px; height: 18px; margin: 18px 0 22px auto; }
+  .case-lead { font-size: 20px; line-height: 1.4; margin-bottom: 28px; }
+  .case-meta { grid-template-columns: 1fr; gap: 20px; }
+  .case-meta dd { font-size: 16px; max-width: none; }
+  .opening-photos { grid-template-columns: 1fr; gap: 27px; }
+  .opening-side { width: 80%; margin-left: auto; gap: 23px; }
+  .case-sticker { font-size: 13px; padding: 10px 12px; }
+  :is(.split-case, .cian-case) main img { border-radius: 8px; }
+  .case-logic { margin-top: 48px; }
+  .case-logic article { grid-template-columns: 1fr; gap: 18px; padding-block: 24px; }
+  .case-logic h2 { font-size: 32px; }
+  .case-logic p, .story-step p { font-size: 20px; line-height: 1.4; }
+  .case-story { margin-top: 30px; }
+  .story-start { grid-template-columns: 1fr; gap: 28px; }
+  .story-step { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding-top: 16px; }
+  .step-number { font-size: 58px; }
+  .story-step p { margin: 0; }
+  .mechanics-photos { grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
+  .mechanics-details { grid-template-columns: 1fr; gap: 24px; }
+  .mechanics-details figure:last-child { width: 75%; }
+  .story-zoo, .story-finale { margin-top: 42px; }
+  .zoo-photos { grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
+  .zoo-photos figure:first-child { width: 85%; }
+  .zoo-photos figure:last-child { width: 90%; margin-left: auto; }
+  .final-photo { width: 100%; margin-top: 28px !important; }
+  .case-cta { margin-top: 48px; padding-block: 28px 36px; }
+  .case-cta h2 { font-size: clamp(27px,7.4vw,50px); }
+  .case-cta p { font-size: 17px; margin-top: 25px; }
+  .case-shell .page-footer { flex-wrap: wrap; }
+  .case-shell .footer-thought { flex-basis: 82%; font-size: 12px; }
+}

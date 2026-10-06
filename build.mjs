@@ -9,4 +9,6 @@ for (const file of ['index.html', 'styles.css', 'script.js']) {
   await copyFile(path.join(root, file), path.join(output, file));
 }
 await cp(path.join(root, 'assets'), path.join(output, 'assets'), { recursive: true });
+await cp(path.join(root, 'public'), path.join(output, 'public'), { recursive: true });
+await cp(path.join(root, 'projects'), path.join(output, 'projects'), { recursive: true });
 console.log('Сайт готов к публикации: dist/');
