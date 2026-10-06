@@ -249,33 +249,38 @@ window.addEventListener('blur', () => cursor.classList.remove('is-visible'));
 // Keep the cursor visible inside the photo dialog's browser top layer too.
 new MutationObserver(() => (photoDialog.open ? photoDialog : document.body).append(cursor)).observe(photoDialog, { attributes: true, attributeFilter: ['open'] });
 
-// Mobile cards reveal once, then keep their ordinary destination link.
+// Mobile focus follows the single card nearest the viewport's central zone.
 const mobileCases = matchMedia('(max-width: 700px)');
 const caseCards = [...document.querySelectorAll('.case-cover')];
-let caseRevealObserver;
-function revealCase(card) { card.classList.add('is-revealed'); }
-function observeMobileCases() {
-  caseRevealObserver?.disconnect();
-  if (!mobileCases.matches) return;
-  caseRevealObserver = new IntersectionObserver(entries => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        revealCase(entry.target);
-        caseRevealObserver.unobserve(entry.target);
+let caseFocusFrame = 0;
+function updateMobileCaseFocus() {
+  caseFocusFrame = 0;
+  let activeCard = null;
+  let closestDistance = Infinity;
+  if (mobileCases.matches) {
+    const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+    const viewportTop = window.visualViewport?.offsetTop ?? 0;
+    const center = viewportTop + viewportHeight / 2;
+    const activeRadius = viewportHeight * .2;
+    for (const card of caseCards) {
+      const rect = card.getBoundingClientRect();
+      const distance = Math.abs(rect.top + rect.height / 2 - center);
+      if (rect.height > 0 && rect.bottom > viewportTop && rect.top < viewportTop + viewportHeight && distance <= activeRadius && distance < closestDistance) {
+        activeCard = card;
+        closestDistance = distance;
       }
     }
-  }, { rootMargin: '-25% 0px -25% 0px', threshold: .16 });
-  for (const card of caseCards) if (!card.classList.contains('is-revealed')) caseRevealObserver.observe(card);
+  }
+  for (const card of caseCards) card.classList.toggle('is-revealed', card === activeCard);
 }
-for (const card of caseCards) {
-  card.addEventListener('click', event => {
-    if (!mobileCases.matches || event.detail === 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (!card.classList.contains('is-revealed')) {
-      event.preventDefault();
-      revealCase(card);
-      caseRevealObserver?.unobserve(card);
-    }
-  });
+function scheduleMobileCaseFocus() {
+  if (!caseFocusFrame) caseFocusFrame = requestAnimationFrame(updateMobileCaseFocus);
 }
-mobileCases.addEventListener('change', observeMobileCases);
-observeMobileCases();
+window.addEventListener('scroll', scheduleMobileCaseFocus, { passive: true });
+window.addEventListener('resize', scheduleMobileCaseFocus, { passive: true });
+window.visualViewport?.addEventListener('resize', scheduleMobileCaseFocus, { passive: true });
+window.visualViewport?.addEventListener('scroll', scheduleMobileCaseFocus, { passive: true });
+window.addEventListener('pageshow', scheduleMobileCaseFocus);
+window.addEventListener('load', scheduleMobileCaseFocus);
+mobileCases.addEventListener('change', scheduleMobileCaseFocus);
+scheduleMobileCaseFocus();

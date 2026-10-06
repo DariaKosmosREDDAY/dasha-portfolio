@@ -500,7 +500,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
  .case-beeline { --brand-size: 10.869565cqw; --brand-height: 18.433180cqh; --kind-size: 5.978261cqw; --kind-height: 10.138249cqh; }
 }
 
-/* Mobile starts with a clean photograph; reveal is shared by scroll and tap. */
+/* Only the mobile card nearest the viewport center reveals its composition. */
 @media (max-width:700px) {
  .case-cover:not(.is-revealed) .case-copy { opacity: 0; transform: translateY(10px); filter: blur(3px); }
  .case-cover:not(.is-revealed) .case-symbol { opacity: 0; transform: translateY(12px) rotate(var(--symbol-angle)) scale(.94); }
