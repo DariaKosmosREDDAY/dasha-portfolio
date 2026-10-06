@@ -11,7 +11,8 @@ http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, 'http://localhost');
     const pathname = decodeURIComponent(url.pathname);
-    const file = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+    const routeFile = pathname === '/' ? '/index.html' : ['/cv', '/cv/'].includes(pathname) ? '/cv/index.html' : pathname;
+    const file = path.resolve(root, '.' + routeFile);
     const relativePath = path.relative(root, file);
     if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
       response.writeHead(403).end('Forbidden');

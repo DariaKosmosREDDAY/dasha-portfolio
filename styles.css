@@ -539,3 +539,27 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 @media (max-width:700px) and (prefers-reduced-motion:reduce) {
  .case-cover .case-copy, .case-cover .case-symbol { transition: none; }
 }
+
+/* Two CV entrances share the site's existing navigation and editorial spacing. */
+.cv-nav { display:inline-flex; align-items:center; justify-content:flex-end; min-width:44px; min-height:44px; color:var(--ink); text-decoration:none; font-size:16px; font-weight:700; letter-spacing:-.035em; }
+.cv-nav:hover { color:var(--accent); }
+.home-cv { width:min(100%,1280px); margin-inline:auto; padding:32px; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:28px; align-items:center; }
+.home-cv-link { grid-column:span 6; display:flex; align-items:center; gap:28px; color:var(--ink); text-decoration:none; font-size:clamp(64px,7vw,100px); line-height:1; letter-spacing:-.07em; font-weight:700; }
+.home-cv-link svg { width:110px; height:60px; fill:none; stroke:var(--accent); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; transition:transform .25s ease; }
+.home-cv-link:hover { color:var(--accent); }
+.home-cv-link:hover svg { transform:translateX(5px); }
+.home-cv .case-contacts { grid-column:span 6; display:flex; flex-wrap:wrap; gap:8px 20px; }
+.home-cv .case-contacts a { color:var(--muted); text-decoration:none; font-size:15px; line-height:1.4; padding-block:8px; text-underline-offset:4px; }
+.home-cv .case-contacts a:hover { color:var(--accent); text-decoration:underline; }
+@media(min-width:701px) and (max-width:1000px) {
+ .home-cv { grid-template-columns:repeat(8,minmax(0,1fr)); padding-inline:24px; gap:24px; }
+ .home-cv-link,.home-cv .case-contacts { grid-column:span 4; }
+}
+@media(max-width:700px) {
+ .home-cv { grid-template-columns:repeat(4,minmax(0,1fr)); padding:24px 18px; gap:16px; }
+ .home-cv-link,.home-cv .case-contacts { grid-column:1 / -1; }
+ .home-cv-link { font-size:64px; }
+ .home-cv-link svg { width:90px; }
+ .home-cv .case-contacts { gap:0 16px; }
+ .home-cv .case-contacts a { min-height:44px; display:inline-flex; align-items:center; font-size:14px; }
+}

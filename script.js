@@ -1,22 +1,5 @@
-const themeButton = document.querySelector('.theme-button');
-const themeColor = document.querySelector('meta[name="theme-color"]');
 const photoDialog = document.querySelector('.photo-dialog');
 const portraitButton = document.querySelector('.portrait-button');
-
-function applyTheme(theme) {
-  const isDark = theme === 'dark';
-  document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
-  themeButton.setAttribute('aria-pressed', String(isDark));
-  themeButton.setAttribute('aria-label', isDark ? 'Включить светлый фон' : 'Включить тёмный фон');
-  themeColor.setAttribute('content', isDark ? '#29252f' : '#e5d7d1');
-}
-
-applyTheme('dark');
-
-themeButton.addEventListener('click', () => {
-  const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  applyTheme(theme);
-});
 
 portraitButton.addEventListener('click', () => photoDialog.showModal());
 document.querySelector('.dialog-close').addEventListener('click', () => photoDialog.close());
