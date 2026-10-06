@@ -1,0 +1,24 @@
+/* Shared navigation and compact contact / CV line, without changing CTA copy. */
+.case-cta .case-contacts { grid-column:1 / -3; align-items:center; align-self:center; }
+.case-cta .case-footer-cv { grid-column:-3 / -1; justify-self:end; align-self:center; font-size:28px; line-height:1; font-weight:700; letter-spacing:-.035em; color:var(--ink); text-decoration:none; padding-block:8px; }
+.case-footer-cv:hover { color:var(--accent); }
+.case-cta .case-contacts a { font-size:14px; }
+.desktop-photo-module[hidden] { display:none; }
+@media(min-width:701px) {
+ .desktop-photo-source { display:none !important; }
+ .desktop-photo-module { display:grid; grid-template-columns:repeat(var(--case-columns),minmax(0,1fr)); gap:16px; margin-block:20px; }
+ .case-opening-group > .desktop-photo-module,.case-intro + .desktop-photo-module { margin-top:0; }
+ .desktop-photo-band { grid-column:1 / -1; display:grid; gap:16px; align-items:start; min-width:0; }
+ .desktop-photo-stack { display:grid; gap:16px; align-content:start; min-width:0; }
+ .case-shell .desktop-photo-module figure { width:100% !important; margin:0 !important; min-width:0; grid-column:auto; align-self:start; }
+ .case-shell .desktop-photo-module img { display:block; width:100%; height:auto; max-height:none; object-fit:contain; aspect-ratio:auto; }
+ /* A modest prize detail paired with the existing ranking graphic. */
+ .rt-continuation .rt-photos:has(img[src*="R2_prize_render"]) { grid-template-columns:repeat(5,minmax(0,1fr)); align-content:start; align-items:start; gap:16px; }
+ .rt-continuation .rt-photos:has(img[src*="R2_prize_render"]) figure:first-child { grid-column:span 3; width:100%; }
+ .rt-continuation .rt-photos:has(img[src*="R2_prize_render"]) figure:last-child { grid-column:span 2; }
+}
+@media(max-width:700px) {
+ .case-cta .case-contacts { grid-column:1 / -1; }
+ .case-cta .case-footer-cv { grid-column:1 / -1; justify-self:start; font-size:26px; min-height:44px; display:inline-flex; align-items:center; }
+ .case-cta .case-contacts a { min-height:44px; display:inline-flex; align-items:center; }
+}

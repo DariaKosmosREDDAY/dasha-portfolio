@@ -30,3 +30,29 @@ document.addEventListener('pointerdown', () => cursor.classList.add('is-pressed'
 document.addEventListener('pointerup', () => cursor.classList.remove('is-pressed'), { passive: true });
 document.documentElement.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'));
 window.addEventListener('blur', () => cursor.classList.remove('is-visible'));
+
+// Same two soft pulses, amplitude and timing as the hero brain.
+const cvBrain = document.querySelector('.cv-hero-object');
+const cvBrainImage = cvBrain.querySelector('img');
+let cvBrainRunning = false, cvBrainTouch;
+function playCvBrain() {
+  if (cvBrainRunning || reducedMotion.matches) return;
+  cvBrainRunning = true;
+  const start = performance.now();
+  function frame(time) {
+    const progress = Math.min(1,(time-start)/850);
+    const think = Math.sin(Math.PI*progress*2)**2;
+    cvBrainImage.style.transform = `rotate(-12deg) scale(${1+think*.035},${1-think*.016})`;
+    if (progress < 1) requestAnimationFrame(frame);
+    else { cvBrainImage.style.transform = ''; cvBrainRunning = false; }
+  }
+  requestAnimationFrame(frame);
+}
+cvBrain.addEventListener('pointerenter', event => { if (desktopPointer.matches && event.pointerType === 'mouse') playCvBrain(); });
+cvBrain.addEventListener('pointerdown', event => { if (event.pointerType !== 'mouse') cvBrainTouch = {x:event.clientX,y:event.clientY}; },{passive:true});
+cvBrain.addEventListener('pointerup', event => {
+  if (event.pointerType !== 'mouse' && cvBrainTouch && Math.hypot(event.clientX-cvBrainTouch.x,event.clientY-cvBrainTouch.y)<12) playCvBrain();
+  cvBrainTouch = undefined;
+},{passive:true});
+cvBrain.addEventListener('pointercancel', () => { cvBrainTouch = undefined; });
+cvBrain.addEventListener('keydown', event => { if (!event.repeat && ['Enter',' '].includes(event.key)) { event.preventDefault(); playCvBrain(); } });

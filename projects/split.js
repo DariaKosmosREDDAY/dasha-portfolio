@@ -1,12 +1,3 @@
-const themeButton = document.querySelector('.theme-button');
-const themeColor = document.querySelector('meta[name="theme-color"]');
-themeButton.addEventListener('click', () => {
-  const isDark = document.documentElement.dataset.theme !== 'dark';
-  document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
-  themeButton.setAttribute('aria-pressed', String(isDark));
-  themeButton.setAttribute('aria-label', isDark ? 'Включить светлый фон' : 'Включить тёмный фон');
-  themeColor.setAttribute('content', isDark ? '#29252f' : '#e5d7d1');
-});
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const desktopPointer = matchMedia('(min-width: 701px) and (hover: hover) and (pointer: fine)');
 const cursor = document.createElement('div');

@@ -1,0 +1,25 @@
+/* NDA redactions cover only the confidential caption, at every output size. */
+.nda-redacted { position:relative; }
+.nda-caption-cover { position:absolute; display:block; pointer-events:none; }
+.nda-caption-165 { left:36.5%; top:23.05%; width:20%; height:1.65%; background:linear-gradient(90deg,#e55410,#b32c06); }
+.nda-caption-198 { left:40.8%; top:61.35%; width:21%; height:1.55%; background:linear-gradient(90deg,#8c1d0a,#721609); }
+.mobile-photo-tile[hidden] { display:none; }
+@media(max-width:700px) {
+ .mobile-photo-source { display:none !important; }
+ .mobile-photo-tile { display:grid; gap:12px; margin-top:var(--case-medium); }
+ .case-intro + .mobile-photo-tile,.case-opening-group > .mobile-photo-tile { margin-top:0; }
+ .mobile-photo-band { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:start; }
+ .mobile-photo-band:has(> .mobile-photo-stack:only-child) { grid-template-columns:minmax(0,1fr); }
+ .mobile-photo-stack { display:grid; gap:12px; align-content:start; min-width:0; }
+ .case-shell .mobile-photo-tile figure { width:100% !important; margin:0 !important; min-width:0; }
+ .case-shell .mobile-photo-tile img { width:100%; height:auto; max-height:none; object-fit:contain; }
+ .mobile-photo-tile .case-sticker { justify-self:start; margin-top:0; }
+ :is(.turvsibur-case,.siburvkus-case,.beeline-case) :is(.case-logic p,.story-step p,.case-meta dd) { font-size:15px; line-height:1.42; }
+ :is(.turvsibur-case,.siburvkus-case,.beeline-case) .case-lead { font-size:16px; line-height:1.45; }
+ :is(.turvsibur-case,.siburvkus-case,.beeline-case) .story-start { gap:12px; }
+ :is(.turvsibur-case,.siburvkus-case,.beeline-case) .story-start .story-step { padding-top:8px; gap:10px; }
+ .cian-case :is(.case-logic p,.story-step p) { font-size:15.5px; line-height:1.45; }
+ .cian-case .case-lead { font-size:17px; line-height:1.45; }
+ .turvsibur-case .case-opening-group .case-photo-grid > figure:nth-child(2) { grid-column:1 / -1; }
+ .roche-case .case-photo-grid:not(.mobile-photo-source) { gap:12px; }
+}

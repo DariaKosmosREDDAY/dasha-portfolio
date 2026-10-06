@@ -236,25 +236,35 @@ new MutationObserver(() => (photoDialog.open ? photoDialog : document.body).appe
 const mobileCases = matchMedia('(max-width: 700px)');
 const caseCards = [...document.querySelectorAll('.case-cover')];
 let caseFocusFrame = 0;
+let tappedCase = null;
+function setMobileCaseFocus(card) {
+  for (const item of caseCards) item.classList.toggle('is-revealed', item === card);
+}
 function updateMobileCaseFocus() {
   caseFocusFrame = 0;
-  let activeCard = null;
-  let closestDistance = Infinity;
-  if (mobileCases.matches) {
-    const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
-    const viewportTop = window.visualViewport?.offsetTop ?? 0;
-    const center = viewportTop + viewportHeight / 2;
-    const activeRadius = viewportHeight * .2;
-    for (const card of caseCards) {
-      const rect = card.getBoundingClientRect();
-      const distance = Math.abs(rect.top + rect.height / 2 - center);
-      if (rect.height > 0 && rect.bottom > viewportTop && rect.top < viewportTop + viewportHeight && distance <= activeRadius && distance < closestDistance) {
-        activeCard = card;
-        closestDistance = distance;
-      }
-    }
+  if (!mobileCases.matches) { tappedCase = null; setMobileCaseFocus(null); return; }
+  const height = window.visualViewport?.height ?? window.innerHeight;
+  const top = window.visualViewport?.offsetTop ?? 0;
+  const center = top + height / 2;
+  const radius = height * .15;
+  const candidates = caseCards.map(card => {
+    const rect = card.getBoundingClientRect();
+    const middle = rect.top + rect.height / 2;
+    return { card, rect, middle, distance: Math.abs(middle - center) };
+  }).filter(item => item.rect.height > 0 && item.rect.bottom > top && item.rect.top < top + height && item.distance <= radius);
+  const tapped = candidates.find(item => item.card === tappedCase);
+  if (tapped) { setMobileCaseFocus(tapped.card); return; }
+  tappedCase = null;
+  candidates.sort((a, b) => a.distance - b.distance);
+  let active = candidates[0];
+  if (active) {
+    // Equal-height neighbours share one vertical centre. Split their common
+    // focus interval in reading order, so each participates in both directions.
+    const peers = candidates.filter(item => Math.abs(item.middle - active.middle) < 1).sort((a,b) => a.rect.left - b.rect.left);
+    const progress = Math.max(0, Math.min(.999, (center - active.middle + radius) / (2 * radius)));
+    active = peers[Math.floor(progress * peers.length)];
   }
-  for (const card of caseCards) card.classList.toggle('is-revealed', card === activeCard);
+  setMobileCaseFocus(active?.card ?? null);
 }
 function scheduleMobileCaseFocus() {
   if (!caseFocusFrame) caseFocusFrame = requestAnimationFrame(updateMobileCaseFocus);
@@ -267,3 +277,12 @@ window.addEventListener('pageshow', scheduleMobileCaseFocus);
 window.addEventListener('load', scheduleMobileCaseFocus);
 mobileCases.addEventListener('change', scheduleMobileCaseFocus);
 scheduleMobileCaseFocus();
+
+for (const card of caseCards) {
+  card.addEventListener('click', event => {
+    if (!mobileCases.matches || event.detail === 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || card.classList.contains('is-revealed')) return;
+    event.preventDefault();
+    tappedCase = card;
+    setMobileCaseFocus(card);
+  });
+}
