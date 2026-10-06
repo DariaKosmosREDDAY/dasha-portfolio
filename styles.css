@@ -287,7 +287,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 .case-split { --symbol-size: 55%; --symbol-height: 64%; --symbol-x: 1%; --symbol-y: 2%; --symbol-angle: -9deg; }
 .case-happynewfuture { --symbol-size: 47%; --symbol-height: 70%; --symbol-x: 0%; --symbol-y: 0%; --symbol-angle: -15deg; --copy-x: 32%; }
 .case-roche { --symbol-size: 45%; --symbol-height: 96%; --symbol-x: -1%; --symbol-y: 0%; --symbol-angle: -20deg; --copy-x: 33%; }
-.case-altai { --symbol-size: 45%; --symbol-height: 64%; --symbol-x: 55%; --symbol-y: 32%; --symbol-angle: 7deg; --copy-right: 30%; --copy-top: 0%; --copy-bottom: auto; --brand-size: 8cqw; }
+.case-rostelecom { --symbol-size: 45%; --symbol-height: 64%; --symbol-x: 55%; --symbol-y: 32%; --symbol-angle: 7deg; --copy-right: 30%; --copy-top: 0%; --copy-bottom: auto; --brand-size: 8cqw; }
 .case-beeline { --symbol-size: 45%; --symbol-height: 87%; --symbol-x: 53%; --symbol-y: 3%; --symbol-angle: 12deg; --copy-right: 22%; }
 .case-siburvkus { --symbol-size: 59%; --symbol-height: 70%; --symbol-x: 32%; --symbol-y: 2%; --symbol-angle: -13deg; --copy-right: 17%; }
 .case-turvsibur { --symbol-size: 69%; --symbol-height: 54%; --symbol-x: 28%; --symbol-y: 0%; --symbol-angle: -14deg; --copy-right: 9%; }
@@ -318,7 +318,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 .case-happynewfuture { left: 61.25482059%; top: 0.00000000%; width: 38.74517941%; }
 .case-roche { left: 0.00000000%; top: 37.80026480%; width: 26.16844592%; }
 .case-siburvkus { left: 0.00000000%; top: 57.65559104%; width: 26.16844592%; }
-.case-altai { left: 26.16844592%; top: 37.80026480%; width: 29.40115211%; }
+.case-rostelecom { left: 26.16844592%; top: 37.80026480%; width: 29.40115211%; }
 .case-turvsibur { left: 26.16844592%; top: 63.30454429%; width: 29.40115211%; }
 .case-beeline { left: 55.56959803%; top: 37.80026480%; width: 19.46234613%; }
 .case-ultimamarket { left: 55.56959803%; top: 54.97809746%; width: 19.46234613%; }
@@ -331,7 +331,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 .case-roche { left: 0.00000000%; top: 13.78127087%; width: 60.28184409%; }
 .case-beeline { left: 0.00000000%; top: 30.45681645%; width: 60.28184409%; }
 .case-cian { left: 60.28184409%; top: 13.78127087%; width: 39.71815591%; }
-.case-altai { left: 0.00000000%; top: 49.85469035%; width: 65.01472110%; }
+.case-rostelecom { left: 0.00000000%; top: 49.85469035%; width: 65.01472110%; }
 .case-turvsibur { left: 0.00000000%; top: 70.41619255%; width: 65.01472110%; }
 .case-siburvkus { left: 65.01472110%; top: 49.85469035%; width: 34.98527890%; }
 .case-ultimamarket { left: 65.01472110%; top: 70.49413041%; width: 34.98527890%; }
@@ -350,7 +350,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 .case-split { --symbol-size: 60%; --symbol-height: 62%; --symbol-x: 1%; --symbol-y: 0%; --symbol-angle: -10deg; }
 .case-happynewfuture { --symbol-size: 58%; --symbol-height: 81%; --symbol-x: 42%; --symbol-y: -2%; --symbol-angle: 13deg; --copy-x: 0%; --copy-right: 25%; }
 .case-roche { --symbol-size: 45%; --symbol-height: 97%; --symbol-x: 57%; --symbol-y: -2%; --symbol-angle: 15deg; --copy-x: 0%; --copy-right: 24%; }
-.case-altai { --symbol-size: 47%; --symbol-height: 62%; --symbol-x: 54%; --symbol-y: 36%; --symbol-angle: -5deg; --copy-right: 32%; --brand-size: 8cqw; }
+.case-rostelecom { --symbol-size: 47%; --symbol-height: 62%; --symbol-x: 54%; --symbol-y: 36%; --symbol-angle: -5deg; --copy-right: 32%; --brand-size: 8cqw; }
 .case-beeline { --symbol-size: 48%; --symbol-height: 89%; --symbol-x: 53%; --symbol-y: 1%; --symbol-angle: 11deg; --copy-right: 22%; }
 .case-siburvkus { --symbol-size: 64%; --symbol-height: 65%; --symbol-x: 32%; --symbol-y: 0%; --symbol-angle: -12deg; --copy-right: 0%; }
 .case-turvsibur { --symbol-size: 65%; --symbol-height: 58%; --symbol-x: 34%; --symbol-y: 0%; --symbol-angle: -12deg; --copy-right: 22%; }
@@ -363,19 +363,19 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 .case-roche { left: 0.00000000%; top: 28.19035390%; width: 60.28184409%; }
 .case-beeline { left: 0.00000000%; top: 36.28595795%; width: 60.28184409%; }
 .case-cian { left: 60.28184409%; top: 28.19035390%; width: 39.71815591%; }
-.case-altai { left: 0.00000000%; top: 45.70319146%; width: 100.00000000%; }
+.case-rostelecom { left: 0.00000000%; top: 45.70319146%; width: 100.00000000%; }
 .case-siburvkus { left: 0.00000000%; top: 61.05686648%; width: 58.84073664%; }
 .case-ultimamarket { left: 58.84073664%; top: 61.05686648%; width: 41.15926336%; }
 .case-turvsibur { left: 0.00000000%; top: 77.90919354%; width: 100.00000000%; }
 }
 @media (prefers-reduced-motion: reduce) { .case-photo, .case-copy, .case-brand, .case-kind, .case-cover::after, .case-cover .case-symbol { transition: none; } }
-/* Keep the performers in the Altai cover clear of its brand caption. */
-.case-altai { --brand-size: 6.8cqw; }
-.case-altai .case-copy { padding: 4cqw; }
-.case-altai .case-altai .case-kind { font-size: 4.1cqw; }
+/* Keep the campaign cover clear of its brand caption. */
+.case-rostelecom { --brand-size: 6.8cqw; }
+.case-rostelecom .case-copy { padding: 4cqw; }
+.case-rostelecom .case-rostelecom .case-kind { font-size: 4.1cqw; }
 @media (max-width: 700px) {
-  .case-altai { --brand-size: 7cqw; }
-  .case-altai   .case-altai .case-kind { font-size: max(10px, 4.1cqw); }
+  .case-rostelecom { --brand-size: 7cqw; }
+  .case-rostelecom   .case-rostelecom .case-kind { font-size: max(10px, 4.1cqw); }
 }
 
 /* Brand-logo poster compositions. SVG coordinates frame the visible logo rather than its export canvas.
@@ -387,7 +387,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 .case-split { --symbol-x: 62%; --symbol-y: 7%; --symbol-size: 31%; --symbol-height: 41%; --copy-x: 7%; --copy-right: 44%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 9cqw; }
 .case-happynewfuture { --symbol-x: 59%; --symbol-y: 14%; --symbol-size: 37%; --symbol-height: 29%; --copy-x: 17%; --copy-right: 40%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 7.5cqw; }
 .case-roche { --symbol-x: 52%; --symbol-y: 13%; --symbol-size: 43%; --symbol-height: 40%; --copy-x: 5%; --copy-right: 58%; --copy-top: auto; --copy-bottom: 8%; --brand-size: 8.5cqw; --kind-size: 4.2cqw; }
-.case-altai { --symbol-x: 65%; --symbol-y: 31%; --symbol-size: 28%; --symbol-height: 46%; --copy-x: 6%; --copy-right: 57%; --copy-top: 8%; --copy-bottom: auto; --brand-size: 7cqw; --kind-size: 4.2cqw; }
+.case-rostelecom { --symbol-x: 65%; --symbol-y: 31%; --symbol-size: 28%; --symbol-height: 46%; --copy-x: 6%; --copy-right: 57%; --copy-top: 8%; --copy-bottom: auto; --brand-size: 7cqw; --kind-size: 4.2cqw; }
 .case-beeline { --symbol-x: 6%; --symbol-y: 11%; --symbol-size: 32%; --symbol-height: 52%; --copy-x: 53%; --copy-right: 3%; --copy-top: auto; --copy-bottom: 10%; --brand-size: 9cqw; --kind-size: 4.4cqw; }
 .case-siburvkus { --symbol-x: 7%; --symbol-y: 9%; --symbol-size: 70%; --symbol-height: 23%; --copy-x: 26%; --copy-right: 6%; --copy-top: auto; --copy-bottom: 7%; --brand-size: 10cqw; }
 .case-turvsibur { --symbol-x: 49%; --symbol-y: 65%; --symbol-size: 47%; --symbol-height: 26%; --copy-x: 6%; --copy-right: 39%; --copy-top: 5%; --copy-bottom: auto; --brand-size: 10cqw; }
@@ -405,7 +405,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
  .case-split { --symbol-x: 56%; --symbol-y: 7%; --symbol-size: 36%; --symbol-height: 37%; --copy-x: 7%; --copy-right: 10%; --copy-bottom: 8%; --brand-size: 9.5cqw; --kind-size: 5cqw; }
  .case-happynewfuture { --symbol-x: 59%; --symbol-y: 10%; --symbol-size: 33%; --symbol-height: 37%; --copy-x: 7%; --copy-right: 28%; --copy-bottom: 10%; --brand-size: 9cqw; }
  .case-roche { --symbol-x: 43%; --symbol-y: 9%; --symbol-size: 49%; --symbol-height: 36%; --copy-x: 7%; --copy-right: 12%; --copy-bottom: 8%; --brand-size: 9cqw; --kind-size: 4.5cqw; }
- .case-altai { --symbol-x: 68%; --symbol-y: 13%; --symbol-size: 24%; --symbol-height: 39%; --copy-x: 7%; --copy-right: 36%; --copy-top: 11%; --brand-size: 7cqw; --kind-size: 4.2cqw; }
+ .case-rostelecom { --symbol-x: 68%; --symbol-y: 13%; --symbol-size: 24%; --symbol-height: 39%; --copy-x: 7%; --copy-right: 36%; --copy-top: 11%; --brand-size: 7cqw; --kind-size: 4.2cqw; }
  .case-beeline { --symbol-x: 8%; --symbol-y: 9%; --symbol-size: 25%; --symbol-height: 36%; --copy-x: 39%; --copy-right: 6%; --copy-bottom: 9%; --brand-size: 8.5cqw; --kind-size: 4.5cqw; }
  .case-siburvkus { --symbol-x: 8%; --symbol-y: 11%; --symbol-size: 67%; --symbol-height: 26%; --copy-x: 8%; --copy-right: 12%; --copy-bottom: 9%; --brand-size: 10cqw; }
  .case-turvsibur { --symbol-x: 34%; --symbol-y: 57%; --symbol-size: 58%; --symbol-height: 27%; --copy-x: 7%; --copy-right: 25%; --copy-top: 10%; --brand-size: 10cqw; }
@@ -424,7 +424,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
   .case-happynewfuture { left: 60.55555556%; top: 0.00000000%; width: 39.44444444%; height: 39.22222222%; --symbol-x: 77.11267606%; --symbol-y: 28.61189802%; --symbol-size: 36.61971831%; --symbol-height: 29.74504249%; --logo-angle: 0deg; --copy-x: 16.90140845%; --copy-right: 40.31690141%; --copy-top: 52.40793201%; --copy-bottom: auto; }
   .case-roche { left: 0.00000000%; top: 39.22222222%; width: 21.80555556%; height: 21.88888889%; --symbol-x: 73.88535032%; --symbol-y: 32.99492386%; --symbol-size: 43.31210191%; --symbol-height: 40.60913706%; --logo-angle: 0deg; --copy-x: 4.77707006%; --copy-right: 57.96178344%; --copy-top: 56.85279188%; --copy-bottom: auto; }
   .case-siburvkus { left: 0.00000000%; top: 61.11111111%; width: 21.80555556%; height: 38.88888889%; --symbol-x: 42.35668790%; --symbol-y: 19.71428571%; --symbol-size: 70.06369427%; --symbol-height: 22.57142857%; --logo-angle: 0deg; --copy-x: 25.79617834%; --copy-right: 6.05095541%; --copy-top: 60.85714286%; --copy-bottom: auto; }
-  .case-altai { left: 21.80555556%; top: 39.22222222%; width: 28.81944444%; height: 29.00000000%; --symbol-x: 79.03614458%; --symbol-y: 54.78927203%; --symbol-size: 27.95180723%; --symbol-height: 46.74329502%; --logo-angle: 0deg; --copy-x: 6.02409639%; --copy-right: 56.62650602%; --copy-top: 8.42911877%; --copy-bottom: auto; }
+  .case-rostelecom { left: 21.80555556%; top: 39.22222222%; width: 28.81944444%; height: 29.00000000%; --symbol-x: 79.03614458%; --symbol-y: 54.78927203%; --symbol-size: 27.95180723%; --symbol-height: 46.74329502%; --logo-angle: 0deg; --copy-x: 6.02409639%; --copy-right: 56.62650602%; --copy-top: 8.42911877%; --copy-bottom: auto; }
   .case-turvsibur { left: 21.80555556%; top: 68.22222222%; width: 28.81944444%; height: 31.77777778%; --symbol-x: 72.53012048%; --symbol-y: 78.32167832%; --symbol-size: 45.78313253%; --symbol-height: 32.16783217%; --logo-angle: -7deg; --copy-x: 6.02409639%; --copy-right: 38.79518072%; --copy-top: 0.00000000%; --copy-bottom: auto; }
   .case-beeline { left: 50.62500000%; top: 39.22222222%; width: 25.55555556%; height: 24.11111111%; --symbol-x: 21.46739130%; --symbol-y: 36.40552995%; --symbol-size: 31.52173913%; --symbol-height: 51.61290323%; --logo-angle: 0deg; --copy-x: 52.98913043%; --copy-right: 3.26086957%; --copy-top: 41.93548387%; --copy-bottom: auto; }
   .case-ultimamarket { left: 50.62500000%; top: 63.33333333%; width: 25.55555556%; height: 36.66666667%; --symbol-x: 76.08695652%; --symbol-y: 27.27272727%; --symbol-size: 38.58695652%; --symbol-height: 44.54545455%; --logo-angle: 0deg; --copy-x: 5.16304348%; --copy-right: 45.38043478%; --copy-top: 60.60606061%; --copy-bottom: auto; }
@@ -448,7 +448,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
   .case-roche { height: 8.09560405%; }
   .case-beeline { height: 9.41723351%; }
   .case-cian { height: 17.51283756%; }
-  .case-altai { height: 15.35367502%; }
+  .case-rostelecom { height: 15.35367502%; }
   .case-siburvkus { height: 16.85232706%; }
   .case-ultimamarket { height: 16.85232706%; }
   .case-turvsibur { height: 22.09080646%; }
@@ -466,7 +466,7 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
   .case-happynewfuture { --brand-height: 12.067989cqh; --kind-height: 7.401700cqh; }
   .case-roche { --brand-height: 13.548223cqh; --kind-height: 6.694416cqh; }
   .case-siburvkus { --brand-height: 8.971429cqh; --kind-height: 4.126857cqh; }
-  .case-altai { --brand-height: 11.130268cqh; --kind-height: 6.678161cqh; }
+  .case-rostelecom { --brand-height: 11.130268cqh; --kind-height: 6.678161cqh; }
   .case-turvsibur { --brand-height: 14.510490cqh; --kind-height: 6.674825cqh; }
   .case-beeline { --brand-height: 15.262673cqh; --kind-height: 7.461751cqh; }
   .case-ultimamarket { --brand-height: 9.478788cqh; --kind-height: 4.906667cqh; }

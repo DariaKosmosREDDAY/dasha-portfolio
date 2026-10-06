@@ -3,7 +3,7 @@
 .case-image-link { display: block; text-decoration: none; border-radius: 8px; }
 .case-image-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media(max-width:700px) {
- :is(.roche-case,.altai-case) .case-contacts a { min-height:44px; display:inline-flex; align-items:center; }
+ .roche-case .case-contacts a { min-height:44px; display:inline-flex; align-items:center; }
  /* The interface screenshots need a readable width, unlike photographic details. */
  .roche-case .case-photo-grid figure { grid-column: 1 / -1; }
  .roche-case .case-opening-group .case-photo-grid > figure:not(:first-child) { grid-column: span 2; }
