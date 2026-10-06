@@ -87,6 +87,7 @@
  .cv-brand-marquee { padding-block:20px 24px; margin-top:20px; }
  .cv-brand-group { gap:24px; padding-right:24px; }
  .cv-brand-group span { font-size:32px; }
+ .cv-brand-track { animation-duration:50s; }
  .cv-page .case-cta > p { font-size:15px; }
 }
 @media(prefers-reduced-motion:reduce) {

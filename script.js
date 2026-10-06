@@ -14,6 +14,7 @@ photoDialog.addEventListener('click', (event) => {
 const svgNS = 'http://www.w3.org/2000/svg';
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+const mobileSculptureMode = matchMedia('(max-width:700px)');
 const sculptureNames = { piano: 'Клавиши пианино', bible: 'Библия', laptop: 'Ноутбук', brain: 'Мозг', banknote: 'Купюра', memoji: 'Memoji' };
 const keyShapes = [
   '468,337 530,291 666,462 681,550 638,682 590,649 479,433',
@@ -154,13 +155,13 @@ function makeSculpture(original) {
   decoded.src = source;
   let running = false;
   function play() {
-    if (running) return;
+    if (running || (kind === 'bible' && mobileSculptureMode.matches)) return;
     running = true;
     svg.dataset.animating = 'true';
     const duration = reducedMotion.matches ? 140 : kind === 'memoji' ? 600 : kind === 'bible' ? 900 : 850;
     const start = performance.now();
     const frame = (time) => {
-      const progress = Math.min(1, (time - start) / duration);
+      const progress = kind === 'bible' && mobileSculptureMode.matches ? 1 : Math.min(1, (time - start) / duration);
       const pulse = Math.sin(Math.PI * progress) ** 2;
       renderPart(progress);
       if (!reducedMotion.matches) {
@@ -236,13 +237,12 @@ new MutationObserver(() => (photoDialog.open ? photoDialog : document.body).appe
 const mobileCases = matchMedia('(max-width: 700px)');
 const caseCards = [...document.querySelectorAll('.case-cover')];
 let caseFocusFrame = 0;
-let tappedCase = null;
 function setMobileCaseFocus(card) {
   for (const item of caseCards) item.classList.toggle('is-revealed', item === card);
 }
 function updateMobileCaseFocus() {
   caseFocusFrame = 0;
-  if (!mobileCases.matches) { tappedCase = null; setMobileCaseFocus(null); return; }
+  if (!mobileCases.matches) { setMobileCaseFocus(null); return; }
   const height = window.visualViewport?.height ?? window.innerHeight;
   const top = window.visualViewport?.offsetTop ?? 0;
   const center = top + height / 2;
@@ -252,9 +252,6 @@ function updateMobileCaseFocus() {
     const middle = rect.top + rect.height / 2;
     return { card, rect, middle, distance: Math.abs(middle - center) };
   }).filter(item => item.rect.height > 0 && item.rect.bottom > top && item.rect.top < top + height && item.distance <= radius);
-  const tapped = candidates.find(item => item.card === tappedCase);
-  if (tapped) { setMobileCaseFocus(tapped.card); return; }
-  tappedCase = null;
   candidates.sort((a, b) => a.distance - b.distance);
   let active = candidates[0];
   if (active) {
@@ -277,12 +274,3 @@ window.addEventListener('pageshow', scheduleMobileCaseFocus);
 window.addEventListener('load', scheduleMobileCaseFocus);
 mobileCases.addEventListener('change', scheduleMobileCaseFocus);
 scheduleMobileCaseFocus();
-
-for (const card of caseCards) {
-  card.addEventListener('click', event => {
-    if (!mobileCases.matches || event.detail === 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || card.classList.contains('is-revealed')) return;
-    event.preventDefault();
-    tappedCase = card;
-    setMobileCaseFocus(card);
-  });
-}

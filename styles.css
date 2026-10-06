@@ -569,3 +569,14 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
  .case-cover .case-copy { transition:opacity .22s ease,transform .28s ease,filter .22s ease; }
  .case-cover .case-symbol { transition:opacity .22s ease,transform .3s ease; }
 }
+
+/* Direct rendering of the existing Rostelecom PNG on mobile; desktop unchanged. */
+.rostelecom-mobile-logo { display:none; }
+@media(max-width:700px) {
+ .rostelecom-desktop-logo { display:none; }
+ .rostelecom-mobile-logo { display:block; }
+ .case-roche { --symbol-size:59%; --symbol-height:44%; }
+ .case-beeline { --symbol-size:35%; --symbol-height:50%; }
+ .case-turvsibur { --symbol-x:42%; }
+ .case-siburvkus { --symbol-x:0%; --copy-x:34%; }
+}
