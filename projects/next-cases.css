@@ -1,0 +1,5 @@
+/* The new cases share the existing case grid, palette and responsive tokens. */
+.beeline-case .case-sticker { background: #e6b9ca; }
+@media (max-width:700px) {
+ :is(.beeline-case,.happynewfuture-case) .case-contacts a { min-height:44px; display:inline-flex; align-items:center; }
+}
