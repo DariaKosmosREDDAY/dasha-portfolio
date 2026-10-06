@@ -1,0 +1,34 @@
+/* Only the two new cases: existing palette and shared responsive grid. */
+.siburvkus-case .case-sticker { background: #e6b9ca; }
+@media (max-width: 700px) {
+  :is(.siburvkus-case, .vkmail-case) .case-contacts a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+.vkmail-case .case-opening-group .photo-span-8 { grid-column: span 8; }
+.vkmail-case .case-photo-side { grid-column: span 4; display: grid; gap: var(--case-gutter); }
+.vkmail-case .case-photo-side figure { grid-column: 1 / -1; }
+@media (max-width: 1000px) {
+  .vkmail-case .case-opening-group .photo-span-8,
+  .vkmail-case .case-photo-side { grid-column: 1 / -1; }
+  .vkmail-case .case-photo-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vkmail-case .case-photo-side figure { grid-column: span 1; }
+}
+/* VK photographs keep native ratios, packed into deliberately balanced stacks. */
+.vkmail-case .case-opening-group .case-photo-grid,
+.vkmail-case .case-photo-side { gap: 16px; }
+.vk-photo-tile { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; margin-top: var(--case-medium); align-items: start; }
+.vk-photo-column { grid-column: span 4; display: grid; gap: 16px; align-content: start; }
+@media (min-width: 701px) and (max-width: 1000px) {
+ .vk-photo-tile { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+ .vk-photo-column { grid-column: span 3; }
+ .vk-photo-column:last-child { grid-column: span 2; }
+}
+@media (max-width: 700px) {
+ .vkmail-case .case-opening-group .case-photo-grid,
+ .vkmail-case .case-photo-side { gap: 12px; }
+ .vk-photo-tile { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+ .vk-photo-column { grid-column: span 2; gap: 12px; }
+}
