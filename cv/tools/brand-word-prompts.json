@@ -1,0 +1,105 @@
+{
+  "tool": "image_gen.imagegen",
+  "common": "Use case: stylized-concept. ONE standalone sculptural 3D WORD for a designer portfolio marquee. The TYPOGRAPHY ITSELF is the entire object: every letter is a separately modeled, thick, softly rounded tactile solid with visibly curved side surfaces and nuanced glossy studio reflections. Editorial CGI / experimental graphic design, playful modern object-like letterforms, sophisticated. Render the exact supplied name as readable bold sans-serif, natural spacing, ONE horizontal line, nearly frontal mild three-quarter perspective. High legibility at small website sizes. Completely transparent alpha surrounding and BETWEEN letters and in every letter counter. Nothing behind the letters. No official logo, no plaque, NO badge, NO capsule, NO backing, NO background shape, NO keychain, NO rings, NO hardware, NO frame, no platform, no floor, no glow surrounding the word, no labels, no extra words. Fully visible complete word with modest transparent safe margin. Mostly one color, broad restrained white reflections, soft studio lighting, clearly modeled 3D volume rather than layered flat extrusion.",
+  "brands": [
+    [
+      "sber",
+      "Сбер",
+      "Lime-green glossy cast soft plastic letters, inflated but sculpted, subtle organic curvature and gently pinched soft edges, chunky counters clear."
+    ],
+    [
+      "vk",
+      "VK",
+      "Milk-white pearlescent soft chrome letters, broad rounded solid bevels, subtle lilac and mint studio reflections, cast rounded angular letter structure, NOT the official VK connected symbol. V and K clearly distinct."
+    ],
+    [
+      "yandex",
+      "Яндекс",
+      "Lavender translucent jelly-acrylic letters, rounded thick solid strokes, gently wavy surfaces, clear letter openings, mild inner translucency, no bubble or backing around word."
+    ],
+    [
+      "avito",
+      "Авито",
+      "Mint-green glossy tubular but bold sans-serif letterforms, slightly stretched rounded sides, softly sculptural molded plastic with a few subtle dents."
+    ],
+    [
+      "t-bank",
+      "Т-Банк",
+      "Pale lemon yellow cast glossy hard-plastic glyphs, broad generous rounded bevels and more geometric solid structure, restrained extrusion, distinctly sculpted side profile."
+    ],
+    [
+      "alfa-bank",
+      "Альфа-Банк",
+      "Coral-pink glossy soft silicone glyphs with gently curved thick sides and a VERY subtle wave in the word baseline, separately legible Cyrillic letters and true hyphen, no backing."
+    ],
+    [
+      "mts",
+      "МТС",
+      "Creamy milk-white pearlescent resin bold letter sculptures, chubby organic rounded shoulders, subtle mint/lilac reflected accents, clear full-size Cyrillic capitals. No glowing halo."
+    ],
+    [
+      "roche",
+      "Roche",
+      "Icy pale blue translucent polished acrylic letter solids, slightly harder wide beveled edges and softly rounded corners, thick curved sides, no hexagon or official logo."
+    ],
+    [
+      "beeline",
+      "Билайн",
+      "Soft lilac glossy rubber letters, chunky smooth strokes with subtle squish and naturally uneven surface thickness, readable Cyrillic, rounded letter counters."
+    ],
+    [
+      "cian",
+      "Циан",
+      "Pale pink glossy poured-resin word, thick rounded solid letters with softly scalloped bulging side profiles, open counters and slight playful sculptural irregularity."
+    ],
+    [
+      "sibur",
+      "СИБУР",
+      "Mint-cyan glossy translucent acrylic capital letters, bold rounded geometric shapes, deep glassy softly curved sides, crisp readable Cyrillic, no base."
+    ],
+    [
+      "gazprom",
+      "Газпром",
+      "Pale lemon yellow softly inflated glossy silicone letter sculptures, a few gentle organic bends in strokes, broad smooth white softbox highlights, NOT an official logo."
+    ],
+    [
+      "vkusvill",
+      "ВкусВилл",
+      "Lime-green glossy semi-translucent gel letter solids, slightly undulating surfaces, soft thick sides, modest natural curve through the word, all Cyrillic readable."
+    ],
+    [
+      "severstal",
+      "Северсталь",
+      "Milk-white opalescent resin letter sculptures with lavender/pearl iridescent edge reflections, round but more structured cast letter shapes, legible long word on ONE line."
+    ],
+    [
+      "xiaomi",
+      "Xiaomi",
+      "Coral orange glossy sculptural rounded plastic letters, mildly inflated tubes with soft molded creases, solid cast typography, not a logo."
+    ],
+    [
+      "rostelecom",
+      "Ростелеком",
+      "Lavender lightly translucent glossy acrylic sculptural letters, soft asymmetric rounded bevels, subtle organic surface curvature, long Cyrillic word perfectly readable on one line."
+    ],
+    [
+      "magnit",
+      "Магнит",
+      "Pale yellow polished molded plastic word, thick softly rounded geometric letterforms, subtle milk-white pearl reflections, each glyph distinctly legible."
+    ],
+    [
+      "redmi",
+      "Redmi",
+      "Mint pastel soft glossy silicone typography, chubby softly pinched letter sides, a little organic unevenness in modeled thickness, bold sans-serif readability."
+    ],
+    [
+      "mars",
+      "Mars",
+      "Soft pink pearlescent glossy resin letter sculptures, curvaceous chunky but clearly readable sans-serif strokes, lilac/milk reflected light, NOT an official script logo."
+    ]
+  ],
+  "final_overrides": {
+    "VK": "Edit generated lavender VK badge: keep only the two white letter sculptures, delete all badge, ring, hardware, fog and backing; opaque glossy cream-white V and K on transparent alpha.",
+    "Газпром": "Opaque pale yellow hard glossy molded plastic letters with restrained moderate lighting, clear counters, small crisp reflections on letters only; no luminous material, haze, backing or halo."
+  }
+}

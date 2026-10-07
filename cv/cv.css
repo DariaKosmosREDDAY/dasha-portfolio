@@ -45,14 +45,14 @@
 .cv-brand-marquee { width:100%; overflow:hidden; padding:26px 0 30px; margin-top:24px; }
 .cv-brand-track { display:flex; width:max-content; animation:cv-brands-drift 100s linear infinite; }
 .cv-brand-group { display:flex; align-items:center; gap:38px; padding-right:38px; flex-shrink:0; }
-/* Glossy faces sit over actual offset depth layers, rather than a flat shadow. */
-.cv-brand-object { display:block; position:relative; white-space:nowrap; font-size:clamp(34px,3.5vw,50px); line-height:1.15; font-weight:700; letter-spacing:-.055em; transform-style:preserve-3d; transform:perspective(700px) rotateX(7deg) rotateY(-8deg) rotate(-2deg); --brand-light:#f1eafa; --brand-face:#c2b4e6; --brand-mid:#a38bc9; --brand-side:#796191; }
-.cv-brand-object:nth-child(3n+2) { --brand-light:#fff0f6; --brand-face:#e6b9ca; --brand-mid:#c583a8; --brand-side:#96597c; transform:perspective(700px) rotateX(-5deg) rotateY(7deg) rotate(2deg); }
-.cv-brand-object:nth-child(3n) { --brand-light:#f6ffe0; --brand-face:#d1ed79; --brand-mid:#a7bf5d; --brand-side:#788d40; transform:perspective(700px) rotateX(5deg) rotateY(-5deg) rotate(-1deg); }
-.cv-brand-side { display:block; position:absolute; inset:0 auto auto 0; color:var(--brand-side); -webkit-text-stroke:1.3px var(--brand-side); transform:translate3d(calc(var(--layer)*.55px),calc(var(--layer)*.65px),calc(var(--layer)*-1px)); }
-.cv-brand-side:first-child { text-shadow:3px 6px 7px #110d2070; }
-.cv-brand-face { display:block; position:relative; transform:translateZ(1px); color:transparent; background:linear-gradient(155deg,var(--brand-light) 3%,var(--brand-face) 24%,var(--brand-light) 31%,var(--brand-face) 40%,var(--brand-mid) 59%,var(--brand-face) 73%,var(--brand-mid) 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-stroke:.7px var(--brand-light); }
-.cv-brand-face::after { content:attr(data-brand); position:absolute; inset:0; color:transparent; background:linear-gradient(178deg,transparent 12%,#fff9 18%,transparent 26%,transparent 66%,#fff5 72%,transparent 78%); -webkit-background-clip:text; background-clip:text; -webkit-text-stroke:0; pointer-events:none; }
+/* Rounded, inflated glyph surfaces are rendered locally with studio reflections.
+   Invisible labels retain the original ticker geometry at every breakpoint. */
+.cv-brand-object { display:block; position:relative; white-space:nowrap; font-size:clamp(34px,3.5vw,50px); line-height:1.15; font-weight:700; letter-spacing:-.055em; transform:rotate(-2deg); }
+.cv-brand-object:nth-child(3n+2) { transform:rotate(2deg); }
+.cv-brand-object:nth-child(3n) { transform:rotate(-1deg); }
+.cv-brand-label { display:block; visibility:hidden; }
+.cv-brand-sculpture { position:absolute; inset:-.15em -.2em; display:block; width:calc(100% + .4em); height:calc(100% + .3em); object-fit:contain; filter:drop-shadow(0 .08em .06em #110d2045); pointer-events:none; user-select:none; }
+.cv-piano-frame { display:contents; }
 @keyframes cv-brands-drift { to { transform:translateX(-50%); } }
 @media(min-width:701px) and (max-width:1000px) {
  .cv-hero-copy { grid-column:span 4; }
@@ -114,4 +114,13 @@
  .cv-education-section { padding-block:22px 26px; }
  .cv-education-section .cv-section-heading { min-height:88px; padding-right:120px; }
  .cv-education-section .cv-education-object { width:106px; height:106px; top:-20px; right:0; }
+}
+
+/* Reposition the same piano only on desktop; its mobile anchor stays intact. */
+@media(min-width:701px) {
+ .cv-page { position:relative; }
+ .cv-education-section { position:relative; }
+ .cv-education-section .cv-section-heading { position:static; }
+ .cv-piano-frame { --piano-size:clamp(240px,23vw,350px); display:block; position:absolute; top:calc(50% - var(--piano-size) * .6); right:0; width:calc(var(--piano-size) * .8); height:calc(var(--piano-size) * 1.3); overflow:clip; pointer-events:none; }
+ .cv-education-section .cv-education-object { width:var(--piano-size); height:var(--piano-size); top:calc(var(--piano-size) * .1); right:calc(var(--piano-size) * -.43); }
 }
