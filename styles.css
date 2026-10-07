@@ -579,3 +579,22 @@ figcaption { top: -29px; letter-spacing: .1em; background: var(--paper); padding
 
 /* Restore a natural gap after Г/г without loosening the rest of the surname. */
 .surname-g { letter-spacing:-.025em; }
+
+/* Individual adjustments on the existing desktop board. */
+@media(min-width:701px) {
+ .case-turvsibur { --copy-top:4%; }
+ .case-siburvkus { --symbol-x:37%; --copy-x:30%; --copy-right:1.84713375%; }
+ :is(.case-turvsibur,.case-siburvkus) .case-copy { align-items:stretch; text-align:left; }
+ :is(.case-turvsibur,.case-siburvkus) :is(.case-brand,.case-kind) { text-align:left; text-wrap:wrap; }
+}
+/* Mobile positions are local; scroll timing and the board partitions are unchanged. */
+@media(max-width:700px) {
+ .case-roche { --symbol-x:47%; --symbol-y:12%; }
+ .case-cian { --symbol-x:4%; --copy-x:14%; }
+ .case-rostelecom { --symbol-size:72%; --symbol-height:94%; --symbol-x:25%; --symbol-y:3%; }
+ .case-rostelecom .case-symbol { object-position:right center; }
+ .case-siburvkus { --copy-x:39%; --copy-right:1%; }
+ .case-turvsibur { --symbol-size:64%; --symbol-height:30%; --symbol-x:45%; --symbol-y:61%; }
+ .case-turvsibur :is(.case-brand,.case-kind) { text-align:left; text-wrap:wrap; }
+ .case-turvsibur .case-copy { align-items:stretch; text-align:left; }
+}
